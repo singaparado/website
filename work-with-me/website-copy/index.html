@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website &amp; Landing Page Copy — Work With Me</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<header>
+  <nav class="container">
+    <a href="/" class="nav-name">Mahdi Singaparado</a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
+    <div class="nav-links" id="navLinks">
+      <a href="/#practice">Practice</a>
+      <a href="/#work">Work</a>
+      <a href="/#contact">Contact</a>
+      <a href="/studio" class="nav-cta">Studio</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="form-hero">
+    <div class="container">
+      <a href="/studio" class="form-back">← Back to Studio</a>
+      <p class="eyebrow">02 · $1,500 – $4,000</p>
+      <h1>Website &amp; Landing Page Copy</h1>
+      <p>Tell me about the pages that need writing. I'll follow up within two business days with scope and a fixed quote.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <form class="intake-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <input type="hidden" name="service" value="Website & Landing Page Copy">
+
+        <div class="field-row">
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="company">Company / Project</label>
+          <input type="text" id="company" name="company">
+        </div>
+
+        <div class="field">
+          <label for="url">Current website (if live)</label>
+          <input type="url" id="url" name="url" placeholder="https://">
+        </div>
+
+        <div class="field">
+          <label for="pages">Which pages need copy?</label>
+          <input type="text" id="pages" name="pages" placeholder="e.g. homepage, pricing, one landing page">
+        </div>
+
+        <div class="field">
+          <label for="details">What's the product or business, in your own words?</label>
+          <textarea id="details" name="details" placeholder="What you do, who buys it, and anything about tone or competitors worth knowing."></textarea>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="budget">Budget range</label>
+            <select id="budget" name="budget">
+              <option>$1,500 – $2,500</option>
+              <option>$2,500 – $4,000</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="timeline">Timeline</label>
+            <select id="timeline" name="timeline">
+              <option>Within 2 weeks</option>
+              <option>Within a month</option>
+              <option>No rush</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn">Send request →</button>
+        <p class="form-note">This goes directly to my inbox. No account, no spam.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <span>© 2026 Mahdi Singaparado</span>
+    <div class="footer-links">
+      <a href="/">Practice</a>
+      <a href="/studio">Studio</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/script.js"></script>
+</body>
+</html>
