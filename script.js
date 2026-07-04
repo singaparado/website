@@ -1,29 +1,18 @@
-// Mobile nav toggle
-const navToggle = document.getElementById('navToggle');
-const navLinks = document.getElementById('navLinks');
-if (navToggle && navLinks) {
-  navToggle.addEventListener('click', () => {
-    const isOpen = navLinks.classList.toggle('open');
-    navToggle.setAttribute('aria-expanded', isOpen);
-  });
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      navToggle.setAttribute('aria-expanded', 'false');
-    });
-  });
-}
+// HOME — homepage-only behavior.
 
-// Scroll reveal
-const revealEls = document.querySelectorAll('.reveal');
-if (revealEls.length) {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
+// When one archive entry opens, close its siblings within the same
+// group. This makes the Work section behave like opening one folder
+// at a time in a cabinet, rather than an accordion where everything
+// piles up open at once.
+document.querySelectorAll('.archive-list').forEach(list => {
+  const entries = list.querySelectorAll('details.archive-entry');
+  entries.forEach(entry => {
+    entry.addEventListener('toggle', () => {
+      if (entry.open) {
+        entries.forEach(other => {
+          if (other !== entry) other.open = false;
+        });
       }
     });
-  }, { threshold: 0.12 });
-  revealEls.forEach(el => observer.observe(el));
-}
+  });
+});
