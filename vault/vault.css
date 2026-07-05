@@ -1,0 +1,113 @@
+/* ============================================================
+   VAULT — self-contained. Never touches home.css or studio.css.
+   Depends only on shared/shared.css.
+   ============================================================ */
+
+.vault-hero{
+  padding:64px 0 80px;
+  border-bottom:1px solid var(--hairline);
+}
+.vault-hero h1{
+  font-family:var(--display);
+  font-weight:400;
+  font-size:clamp(32px,5vw,48px);
+  line-height:1.2;
+  max-width:16ch;
+  margin-top:24px;
+}
+.vault-hero p{
+  margin-top:24px;
+  max-width:64ch;
+  color:var(--slate);
+  font-size:17px;
+  line-height:1.75;
+}
+
+.vault-counter{
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:var(--moss);
+  margin-top:28px;
+}
+
+.vault-list{ display:flex; flex-direction:column; }
+.vault-entry{
+  border-bottom:1px solid var(--hairline);
+  scroll-margin-top:96px;
+}
+.vault-entry summary{ list-style:none; cursor:pointer; }
+.vault-entry summary::-webkit-details-marker{ display:none; }
+
+.vault-card{
+  padding:44px 4px 44px 20px;
+  border-left:2px solid transparent;
+  transition:border-color 0.25s ease, background 0.25s ease;
+}
+.vault-entry:hover .vault-card{
+  border-left-color:var(--sage);
+  background:var(--tint-sage);
+}
+.vault-card-meta{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-bottom:18px;
+}
+.vault-index{
+  font-family:var(--mono);
+  font-size:12px;
+  color:var(--moss);
+  letter-spacing:0.05em;
+}
+.vault-name{
+  font-family:var(--display);
+  font-size:clamp(24px,3.2vw,30px);
+  margin-bottom:12px;
+}
+.vault-oneline{
+  color:var(--slate);
+  font-size:15.5px;
+  max-width:60ch;
+  margin-bottom:20px;
+}
+.vault-cue{
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:var(--moss);
+}
+.vault-entry:not([open]) .cue-close{ display:none; }
+.vault-entry[open] .cue-open{ display:none; }
+
+.vault-document{
+  padding:8px 4px 48px 20px;
+  border-top:1px solid var(--hairline);
+  border-left:2px solid var(--sage);
+  animation:vaultOpen 0.35s ease;
+}
+@keyframes vaultOpen{
+  from{ opacity:0; transform:translateY(-6px); }
+  to{ opacity:1; transform:translateY(0); }
+}
+.vault-document-label{
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:var(--moss);
+  margin:28px 0 24px;
+}
+.vault-quote{
+  font-family:var(--display);
+  font-style:italic;
+  font-size:clamp(20px, 2.8vw, 28px);
+  line-height:1.35;
+  max-width:28ch;
+  color:var(--ink);
+  margin-bottom:8px;
+}
