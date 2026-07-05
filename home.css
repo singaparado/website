@@ -242,5 +242,67 @@ h1{
   text-transform:uppercase;
   color:var(--slate);
 }
-.contact-value{ font-size:16px; transition:color 0.2s ease; }
-.contact-row a:hover .contact-value{ color:var(--moss); }
+/* ---------- Work & Archives previews (homepage) ---------- */
+.preview-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:1px;
+  background:var(--hairline);
+  border:1px solid var(--hairline);
+}
+@media (max-width:800px){
+  .preview-grid{ grid-template-columns:1fr; }
+}
+.preview-card{
+  background:var(--surface);
+  padding:32px 28px;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  transition:background 0.2s ease;
+}
+.preview-card:hover{ background:var(--tint-sage); }
+.preview-card .chip{ align-self:flex-start; }
+.preview-name{ font-family:var(--display); font-size:20px; }
+.preview-line{ color:var(--slate); font-size:14.5px; line-height:1.6; }
+
+.preview-link-out{
+  display:inline-block;
+  margin-top:40px;
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:var(--ink);
+  border-bottom:1px solid var(--ink);
+  padding-bottom:5px;
+  transition:color 0.2s ease, border-color 0.2s ease;
+}
+.preview-link-out:hover{ color:var(--moss); border-color:var(--moss); }
+
+.tint-stone{ background:var(--stone); }
+
+.archives-preview-list{
+  display:flex;
+  flex-direction:column;
+}
+.archives-preview-item{
+  display:block;
+  padding:32px 0;
+  border-bottom:1px solid var(--hairline);
+  transition:opacity 0.2s ease;
+}
+.archives-preview-item:first-child{ padding-top:0; }
+.archives-preview-item:hover{ opacity:0.7; }
+.archives-preview-title{
+  font-family:var(--display);
+  font-size:clamp(20px,2.6vw,26px);
+  margin:10px 0 12px;
+  max-width:26ch;
+}
+.archives-preview-excerpt{
+  color:var(--slate);
+  font-size:15px;
+  max-width:60ch;
+  font-style:italic;
+}
