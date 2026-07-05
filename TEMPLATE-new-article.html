@@ -1,0 +1,109 @@
+<!--
+  ============================================================
+  HOW TO PUBLISH A NEW ARTICLE — read this before editing.
+  ============================================================
+
+  STEP 1 — On GitHub, create a new file. In the filename field, type:
+      archives/YOUR-ARTICLE-SLUG/index.html
+  (use lowercase, hyphens instead of spaces, e.g. "my-new-essay")
+
+  STEP 2 — Copy everything below this comment block and paste it
+  as the content of that new file.
+
+  STEP 3 — Replace every [BRACKETED PLACEHOLDER] below with your
+  real content. Do not touch anything else — the CSS, header,
+  and footer are already wired up correctly.
+
+  STEP 4 — Go to archives/index.html and add ONE new <a> block
+  to the top of the .feed-list (copy the pattern of the existing
+  entries), pointing to your new article's URL.
+
+  STEP 5 — Commit both files. Done. No other file needs to change.
+  ============================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[ARTICLE TITLE] — Mahdi Singaparado</title>
+<meta name="description" content="[ONE SENTENCE DESCRIPTION FOR SEARCH ENGINES]">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/shared/shared.css">
+<link rel="stylesheet" href="/archives/archives.css">
+</head>
+<body>
+
+<header>
+  <nav class="container">
+    <a href="/" class="nav-name">Mahdi Singaparado</a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
+    <div class="nav-links" id="navLinks">
+      <a href="/#practice">Practice</a>
+      <a href="/vault">Vault</a>
+      <a href="/#contact">Contact</a>
+      <a href="/studio" class="nav-cta">Studio</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <div class="essay-nav container" style="padding-top:96px;">
+    <a href="/archives">← Back to Archives</a>
+  </div>
+
+  <div class="essay-header">
+    <div class="container">
+      <p class="essay-meta">[MONTH YEAR] · [CATEGORY — e.g. Travel Essay, Personal Essay, Cultural Commentary]</p>
+      <h1 class="essay-title">[ARTICLE TITLE]</h1>
+      <p class="essay-subtitle">[OPTIONAL ONE-LINE SUBTITLE — delete this whole <p> tag if you don't want one]</p>
+      <p class="essay-byline">By Mahdi Singaparado</p>
+    </div>
+  </div>
+
+  <article class="essay-body container">
+
+    <!--
+      Write your essay below using these three tags only:
+      <p>...</p>            for a normal paragraph
+      <h2>...</h2>           for a section heading within the essay
+      <blockquote>...</blockquote>   for a pulled quote line
+
+      Add as many <p> tags as you need. Delete this example
+      content and replace it with your real essay.
+    -->
+
+    <p>[FIRST PARAGRAPH OF YOUR ESSAY GOES HERE.]</p>
+    <p>[SECOND PARAGRAPH.]</p>
+
+    <h2>[OPTIONAL SECTION HEADING]</h2>
+    <p>[MORE PARAGRAPHS UNDER THIS SECTION.]</p>
+
+    <blockquote>[AN OPTIONAL PULLED QUOTE, IF A LINE DESERVES EMPHASIS.]</blockquote>
+
+    <p>[CONTINUE UNTIL THE ESSAY ENDS.]</p>
+
+  </article>
+
+  <div class="essay-nav container">
+    <a href="/archives">← Back to Archives</a>
+  </div>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <span>© 2026 Mahdi Singaparado</span>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/vault">Vault</a>
+      <a href="/studio">Studio</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/shared/shared.js"></script>
+</body>
+</html>
