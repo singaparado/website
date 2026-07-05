@@ -1,4 +1,4 @@
-// SHARED — used by both homepage and Studio.
+// SHARED — used by homepage, Studio, and Vault.
 // Only truly universal behavior belongs here.
 
 // Mobile nav toggle
@@ -32,3 +32,20 @@ function initReveal(root = document) {
   revealEls.forEach(el => observer.observe(el));
 }
 initReveal();
+
+// Archive-entry folder behavior — used on any page with .archive-list
+// (currently: homepage Work preview, Vault). When one entry opens,
+// close its siblings, so it behaves like opening one folder at a
+// time in a cabinet rather than an accordion piling everything open.
+document.querySelectorAll('.archive-list').forEach(list => {
+  const entries = list.querySelectorAll('details.archive-entry');
+  entries.forEach(entry => {
+    entry.addEventListener('toggle', () => {
+      if (entry.open) {
+        entries.forEach(other => {
+          if (other !== entry) other.open = false;
+        });
+      }
+    });
+  });
+});
