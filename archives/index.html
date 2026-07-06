@@ -10,7 +10,183 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Prata&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/shared/shared.css">
-<link rel="stylesheet" href="archives.css">
+
+<style>
+/* ============================================================
+   ARCHIVES — INLINED. Signature accent: sage / moss.
+   Editorial index feel — contemplative, essay-driven, unhurried.
+   ============================================================ */
+
+.archives-hero {
+  padding: 100px 0 72px;
+  border-bottom: 1px solid var(--hairline);
+  position: relative;
+}
+
+.archives-hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 56px;
+  height: 3px;
+  background: var(--sage);
+}
+
+.archives-hero .eyebrow {
+  color: var(--moss);
+  margin-bottom: 20px;
+}
+
+.archives-hero h1 {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(34px, 5.5vw, 52px);
+  line-height: 1.18;
+  max-width: 15ch;
+}
+
+.archives-hero p {
+  margin-top: 28px;
+  max-width: 62ch;
+  color: var(--slate);
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+.archives-index-counter {
+  margin-top: 40px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--moss);
+  border: 1px solid var(--hairline);
+  display: inline-block;
+  padding: 10px 16px;
+  background: var(--tint-sage);
+}
+
+/* ---------- Feed section ---------- */
+
+.archives-feed-section {
+  padding: 96px 0 140px;
+}
+
+.archives-feed-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 24px;
+  margin-bottom: 64px;
+}
+
+.archives-feed-head .feed-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--slate);
+}
+
+.archives-feed-head .feed-count {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--moss);
+}
+
+.feed-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.feed-item {
+  display: block;
+  padding: 48px 0;
+  border-top: 1px solid var(--hairline);
+  position: relative;
+  transition: padding-left 0.3s ease;
+}
+
+.feed-list a:last-child { border-bottom: 1px solid var(--hairline); }
+
+.feed-item::before {
+  content: "";
+  position: absolute;
+  left: -24px;
+  top: 48px;
+  width: 3px;
+  height: 0;
+  background: var(--sage);
+  transition: height 0.3s ease;
+}
+
+.feed-item:hover::before { height: calc(100% - 48px); }
+.feed-item:hover { padding-left: 12px; }
+
+.feed-meta {
+  display: block;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--moss);
+  margin-bottom: 16px;
+}
+
+.feed-title {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(24px, 3.2vw, 32px);
+  line-height: 1.3;
+  max-width: 26ch;
+  margin-bottom: 20px;
+  transition: color 0.2s ease;
+}
+
+.feed-item:hover .feed-title { color: var(--moss); }
+
+.feed-excerpt {
+  font-size: 16px;
+  color: var(--slate);
+  line-height: 1.75;
+  max-width: 64ch;
+  margin-bottom: 20px;
+}
+
+.feed-read-more {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+  border-bottom: 1px solid var(--ink);
+  display: inline-block;
+  padding-bottom: 4px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.feed-item:hover .feed-read-more {
+  color: var(--moss);
+  border-color: var(--moss);
+}
+
+/* ---------- Closing note ---------- */
+
+.archives-closing {
+  margin-top: 96px;
+  padding-top: 56px;
+  border-top: 1px solid var(--hairline);
+}
+
+.archives-closing p {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: clamp(18px, 2.2vw, 22px);
+  color: var(--slate);
+  max-width: 52ch;
+  line-height: 1.6;
+}
+</style>
 </head>
 <body>
 
@@ -33,26 +209,40 @@
       <p class="eyebrow">Archives</p>
       <h1>Essays, published as they're written.</h1>
       <p>Long-form writing outside client and founder work — travel, cultural observation, personal essay. Updated on an ongoing basis.</p>
+      <p class="archives-index-counter">[ ENTRIES: 02 // CATEGORY: TRAVEL, PERSONAL // STATUS: ONGOING ]</p>
     </div>
   </section>
 
-  <section>
+  <section class="archives-feed-section">
     <div class="container">
+
+      <div class="archives-feed-head">
+        <span class="feed-label">Reading Index</span>
+        <span class="feed-count">Sorted by most recent</span>
+      </div>
+
       <div class="feed-list">
 
         <a href="/archives/two-islands-in-one/" class="feed-item reveal">
           <span class="feed-meta">September 2025 · Travel &amp; Cultural Essay</span>
           <h2 class="feed-title">Two Islands in One: Of Legends, Local Eats, and the Stories They Keep</h2>
           <p class="feed-excerpt">Every island has two histories: the one written for visitors, and the one whispered to you over coffee by someone who inherits the stories like a heirloom. Exploring hidden histories, local flavors, and truths beyond Lombok's tourist gaze.</p>
+          <span class="feed-read-more">Read Essay →</span>
         </a>
 
         <a href="/archives/the-torch-my-grandfather-never-carried/" class="feed-item reveal">
           <span class="feed-meta">September 2025 · Personal Essay</span>
           <h2 class="feed-title">The Torch My Grandfather Never Carried</h2>
           <p class="feed-excerpt">"Grandfather, how did you feel when Indonesia hosted the Asian Games in 1962?" A pause, then a sigh, long enough that I thought the line had dropped. "Disappointed," he said.</p>
+          <span class="feed-read-more">Read Essay →</span>
         </a>
 
       </div>
+
+      <div class="archives-closing reveal">
+        <p>New entries appear here as they're written — no schedule, no calendar. Just when something is ready to be said.</p>
+      </div>
+
     </div>
   </section>
 </main>
