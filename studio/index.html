@@ -10,7 +10,378 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Prata&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/shared/shared.css">
-<link rel="stylesheet" href="studio.css">
+
+<style>
+/* ============================================================
+   STUDIO — INLINED. No external file. No path resolution.
+   No cache-busting needed. This IS the page.
+   ============================================================ */
+
+.studio-view { display: none; }
+.studio-view.active { display: block; }
+
+.studio-subnav {
+  position: sticky;
+  top: 72px;
+  z-index: 90;
+  background: var(--paper);
+  border-bottom: 1px solid var(--hairline);
+  backdrop-filter: none;
+}
+
+.studio-subnav-inner {
+  display: flex;
+  gap: 48px;
+  height: 56px;
+  align-items: center;
+  overflow-x: auto;
+  padding: 0;
+}
+
+.studio-tab {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--slate);
+  white-space: nowrap;
+  padding: 0;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.studio-tab:hover { color: var(--ink); }
+
+.studio-tab.is-current {
+  color: var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+
+.studio-hero {
+  padding: 80px 0 120px;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.studio-hero h1 {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(36px, 6vw, 56px);
+  line-height: 1.15;
+  max-width: 16ch;
+  margin-top: 32px;
+  letter-spacing: -0.02em;
+}
+
+.studio-hero-body {
+  margin-top: 48px;
+  max-width: 66ch;
+}
+
+.studio-hero-body p {
+  font-size: 17px;
+  color: var(--slate);
+  line-height: 1.75;
+  margin-bottom: 24px;
+}
+
+.studio-hero-body p:last-child { margin-bottom: 0; }
+
+.panel-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  background: transparent;
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  margin-top: 120px;
+}
+
+@media (max-width: 800px) {
+  .panel-grid { grid-template-columns: 1fr; }
+}
+
+.panel {
+  padding: 56px 0;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  border-right: 1px solid var(--hairline);
+}
+
+.panel:last-child { border-right: none; }
+
+@media (max-width: 800px) {
+  .panel {
+    border-right: none;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .panel:last-child { border-bottom: none; }
+}
+
+.panel-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-bottom: 20px;
+  opacity: 0.7;
+}
+
+.panel-name {
+  font-family: var(--display);
+  font-size: clamp(28px, 4vw, 36px);
+  line-height: 1.1;
+  margin-bottom: 28px;
+  font-weight: 400;
+}
+
+.panel p {
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+.panel-capabilities {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: var(--slate);
+  margin-bottom: 40px;
+  line-height: 1.8;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+.panel-link {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  align-self: flex-start;
+  color: var(--ink);
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--ink);
+  transition: opacity 0.2s ease;
+}
+
+.panel-link:hover { opacity: 0.65; }
+
+.bespoke-card {
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  padding: 80px 0;
+  margin-top: 120px;
+}
+
+.bespoke-card p.eyebrow { margin-bottom: 24px; }
+
+.bespoke-card h2 {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(28px, 4vw, 40px);
+  line-height: 1.2;
+  margin: 0 0 32px;
+  max-width: 18ch;
+}
+
+.bespoke-card p {
+  color: var(--slate);
+  font-size: 16px;
+  line-height: 1.8;
+  max-width: 64ch;
+  margin-bottom: 40px;
+}
+
+.bespoke-button {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--ink);
+  padding: 16px 28px;
+  transition: all 0.2s ease;
+}
+
+.bespoke-button:hover { background: var(--ink); color: var(--paper); }
+
+.studio-closing {
+  margin-top: 120px;
+  padding-top: 80px;
+  border-top: 1px solid var(--hairline);
+}
+
+.studio-closing p {
+  font-family: var(--display);
+  font-size: clamp(20px, 3vw, 26px);
+  line-height: 1.4;
+  color: var(--ink);
+  max-width: 56ch;
+  margin-bottom: 48px;
+  font-weight: 400;
+}
+
+.studio-closing-links {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.studio-closing-links a {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 6px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.studio-closing-links a:hover { color: var(--slate); border-color: var(--slate); }
+
+.view-header {
+  padding: 80px 0 80px;
+  border-bottom: 1px solid var(--hairline);
+  margin-bottom: 120px;
+}
+
+.view-header h1 {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(36px, 5vw, 50px);
+  line-height: 1.1;
+  max-width: 18ch;
+  margin-top: 28px;
+  letter-spacing: -0.02em;
+}
+
+.view-intro { margin-top: 48px; max-width: 68ch; }
+
+.view-intro p {
+  font-size: 17px;
+  color: var(--slate);
+  line-height: 1.75;
+  margin-bottom: 20px;
+}
+
+.service-block {
+  padding: 80px 0;
+  border-bottom: 1px solid var(--hairline);
+  margin-bottom: 80px;
+}
+
+.service-block:last-of-type { border-bottom: none; margin-bottom: 0; }
+
+.service-block::before {
+  content: attr(data-service-meta);
+  display: block;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-bottom: 32px;
+  opacity: 0.6;
+}
+
+.service-index {
+  font-family: var(--display);
+  font-size: clamp(40px, 5vw, 56px);
+  line-height: 1;
+  margin-bottom: 32px;
+  opacity: 0.3;
+}
+
+.service-name {
+  font-family: var(--display);
+  font-size: clamp(28px, 4vw, 36px);
+  line-height: 1.15;
+  margin-bottom: 32px;
+  font-weight: 400;
+  max-width: 20ch;
+}
+
+.service-block p {
+  font-size: 16px;
+  color: var(--ink);
+  line-height: 1.8;
+  max-width: 68ch;
+  margin-bottom: 32px;
+}
+
+.service-deliverables {
+  list-style: none;
+  margin: 0 0 40px;
+  padding: 32px 0 0;
+  display: grid;
+  gap: 20px;
+  border-top: 1px solid var(--hairline);
+}
+
+.service-deliverables li {
+  font-size: 15px;
+  color: var(--ink);
+  line-height: 1.7;
+  max-width: 64ch;
+}
+
+.service-deliverables strong {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.service-footer {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 32px;
+  align-items: flex-start;
+  padding-top: 32px;
+  border-top: 1px solid var(--hairline);
+}
+
+.service-price {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: var(--slate);
+  text-transform: uppercase;
+  line-height: 1.6;
+}
+
+.service-cta {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  padding: 14px 24px;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  background: transparent;
+}
+
+.service-cta:hover { background: var(--ink); color: var(--paper); }
+
+.engagement-note {
+  margin-top: 120px;
+  padding-top: 80px;
+  border-top: 1px solid var(--hairline);
+}
+
+.engagement-note p {
+  font-size: 16px;
+  color: var(--slate);
+  line-height: 1.8;
+  max-width: 68ch;
+}
+</style>
 </head>
 <body>
 
@@ -212,6 +583,57 @@
 </footer>
 
 <script src="/shared/shared.js"></script>
-<script src="studio.js"></script>
+<script>
+// STUDIO — INLINED. Same reason as the CSS: no external file, no path bug possible.
+(function () {
+  var VIEWS = ['studio-home', 'applied', 'foundational'];
+  var TITLES = {
+    'studio-home': 'Studio — Mahdi Singaparado',
+    'applied': 'Applied Works — Studio — Mahdi Singaparado',
+    'foundational': 'Foundational Works — Studio — Mahdi Singaparado'
+  };
+
+  function showView(id, push) {
+    if (VIEWS.indexOf(id) === -1) id = 'studio-home';
+
+    VIEWS.forEach(function (v) {
+      var el = document.getElementById(v);
+      if (el) el.classList.toggle('active', v === id);
+    });
+
+    document.querySelectorAll('[data-view-link]').forEach(function (a) {
+      a.classList.toggle('is-current', a.getAttribute('data-view-link') === id);
+    });
+
+    document.title = TITLES[id];
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    if (push) {
+      var hash = id === 'studio-home' ? '' : ('#' + id);
+      history.pushState({ view: id }, '', '/studio' + hash);
+    }
+
+    if (typeof initReveal === 'function') {
+      var el2 = document.getElementById(id);
+      if (el2) initReveal(el2);
+    }
+  }
+
+  document.querySelectorAll('[data-view-link]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      showView(a.getAttribute('data-view-link'), true);
+    });
+  });
+
+  window.addEventListener('popstate', function (e) {
+    var id = (e.state && e.state.view) || (location.hash ? location.hash.slice(1) : 'studio-home');
+    showView(id, false);
+  });
+
+  var initial = location.hash ? location.hash.slice(1) : 'studio-home';
+  showView(initial, false);
+})();
+</script>
 </body>
 </html>
