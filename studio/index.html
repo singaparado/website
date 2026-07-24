@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studio — Mahdi Singaparado</title>
+<meta name="description" content="Applied Works and Foundational Works — the two depths of engagement inside the studio of Mahdi Singaparado.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/shared/shared.css">
+
+<style>
+/* ============================================================
+   STUDIO — INLINED. No external file. No path resolution.
+   No cache-busting needed. This IS the page.
+   ============================================================ */
+
+.studio-view { display: none; }
+.studio-view.active { display: block; }
+
+.studio-subnav {
+  position: sticky;
+  top: 72px;
+  z-index: 90;
+  background: var(--paper);
+  border-bottom: 1px solid var(--hairline);
+  backdrop-filter: none;
+}
+
+.studio-subnav-inner {
+  display: flex;
+  gap: 48px;
+  height: 56px;
+  align-items: center;
+  overflow-x: auto;
+  padding: 0;
+}
+
+.studio-tab {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--slate);
+  white-space: nowrap;
+  padding: 0;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.studio-tab:hover { color: var(--ink); }
+
+.studio-tab.is-current {
+  color: var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+
+.studio-hero {
+  padding: 80px 0 120px;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.studio-hero h1 {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(36px, 6vw, 56px);
+  line-height: 1.15;
+  max-width: 16ch;
+  margin-top: 32px;
+  letter-spacing: -0.02em;
+}
+
+.studio-hero-body {
+  margin-top: 48px;
+  max-width: 66ch;
+}
+
+.studio-hero-body p {
+  font-size: 17px;
+  color: var(--slate);
+  line-height: 1.75;
+  margin-bottom: 24px;
+}
+
+.studio-hero-body p:last-child { margin-bottom: 0; }
+
+.panel-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  background: transparent;
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  margin-top: 120px;
+}
+
+@media (max-width: 800px) {
+  .panel-grid { grid-template-columns: 1fr; }
+}
+
+.panel {
+  padding: 56px 0;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  border-right: 1px solid var(--hairline);
+}
+
+.panel:last-child { border-right: none; }
+
+@media (max-width: 800px) {
+  .panel {
+    border-right: none;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .panel:last-child { border-bottom: none; }
+}
+
+.panel-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-bottom: 20px;
+  opacity: 0.7;
+}
+
+.panel-name {
+  font-family: var(--display);
+  font-size: clamp(28px, 4vw, 36px);
+  line-height: 1.1;
+  margin-bottom: 28px;
+  font-weight: 400;
+}
+
+.panel p {
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+.panel-capabilities {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: var(--slate);
+  margin-bottom: 40px;
+  line-height: 1.8;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+.panel-link {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  align-self: flex-start;
+  color: var(--ink);
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--ink);
+  transition: opacity 0.2s ease;
+}
+
+.panel-link:hover { opacity: 0.65; }
+
+.bespoke-card {
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  padding: 80px 0;
+  margin-top: 120px;
+}
+
+.bespoke-card p.eyebrow { margin-bottom: 24px; }
+
+.bespoke-card h2 {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(28px, 4vw, 40px);
+  line-height: 1.2;
+  margin: 0 0 32px;
+  max-width: 18ch;
+}
+
+.bespoke-card p {
+  color: var(--slate);
+  font-size: 16px;
+  line-height: 1.8;
+  max-width: 64ch;
+  margin-bottom: 40px;
+}
+
+.bespoke-button {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--ink);
+  padding: 16px 28px;
+  transition: all 0.2s ease;
+}
+
+.bespoke-button:hover { background: var(--ink); color: var(--paper); }
+
+.studio-closing {
+  margin-top: 120px;
+  padding-top: 80px;
+  border-top: 1px solid var(--hairline);
+}
+
+.studio-closing p {
+  font-family: var(--display);
+  font-size: clamp(20px, 3vw, 26px);
+  line-height: 1.4;
+  color: var(--ink);
+  max-width: 56ch;
+  margin-bottom: 48px;
+  font-weight: 400;
+}
+
+.studio-closing-links {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.studio-closing-links a {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 6px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.studio-closing-links a:hover { color: var(--slate); border-color: var(--slate); }
+
+.view-header {
+  padding: 80px 0 80px;
+  border-bottom: 1px solid var(--hairline);
+  margin-bottom: 120px;
+}
+
+.view-header h1 {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(36px, 5vw, 50px);
+  line-height: 1.1;
+  max-width: 18ch;
+  margin-top: 28px;
+  letter-spacing: -0.02em;
+}
+
+.view-intro { margin-top: 48px; max-width: 68ch; }
+
+.view-intro p {
+  font-size: 17px;
+  color: var(--slate);
+  line-height: 1.75;
+  margin-bottom: 20px;
+}
+
+.service-block {
+  padding: 80px 0;
+  border-bottom: 1px solid var(--hairline);
+  margin-bottom: 80px;
+}
+
+.service-block:last-of-type { border-bottom: none; margin-bottom: 0; }
+
+.service-block::before {
+  content: attr(data-service-meta);
+  display: block;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-bottom: 32px;
+  opacity: 0.6;
+}
+
+.service-index {
+  font-family: var(--display);
+  font-size: clamp(40px, 5vw, 56px);
+  line-height: 1;
+  margin-bottom: 32px;
+  opacity: 0.3;
+}
+
+.service-name {
+  font-family: var(--display);
+  font-size: clamp(28px, 4vw, 36px);
+  line-height: 1.15;
+  margin-bottom: 32px;
+  font-weight: 400;
+  max-width: 20ch;
+}
+
+.service-block p {
+  font-size: 16px;
+  color: var(--ink);
+  line-height: 1.8;
+  max-width: 68ch;
+  margin-bottom: 32px;
+}
+
+.service-deliverables {
+  list-style: none;
+  margin: 0 0 40px;
+  padding: 32px 0 0;
+  display: grid;
+  gap: 20px;
+  border-top: 1px solid var(--hairline);
+}
+
+.service-deliverables li {
+  font-size: 15px;
+  color: var(--ink);
+  line-height: 1.7;
+  max-width: 64ch;
+}
+
+.service-deliverables strong {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.service-footer {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 32px;
+  align-items: flex-start;
+  padding-top: 32px;
+  border-top: 1px solid var(--hairline);
+}
+
+.service-price {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: var(--slate);
+  text-transform: uppercase;
+  line-height: 1.6;
+}
+
+.service-cta {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  padding: 14px 24px;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  background: transparent;
+}
+
+.service-cta:hover { background: var(--ink); color: var(--paper); }
+
+.engagement-note {
+  margin-top: 120px;
+  padding-top: 80px;
+  border-top: 1px solid var(--hairline);
+}
+
+.engagement-note p {
+  font-size: 16px;
+  color: var(--slate);
+  line-height: 1.8;
+  max-width: 68ch;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="container">
+    <a href="/" class="nav-name">Mahdi Singaparado</a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
+    <div class="nav-links" id="navLinks">
+      <a href="/#practice">Practice</a>
+      <a href="/#work">Work</a>
+      <a href="/#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<div class="studio-subnav">
+  <div class="container studio-subnav-inner">
+    <a href="#" class="studio-tab is-current" data-view-link="studio-home">Overview</a>
+    <a href="#" class="studio-tab" data-view-link="applied">Applied Works</a>
+    <a href="#" class="studio-tab" data-view-link="foundational">Foundational Works</a>
+  </div>
+</div>
+
+<main>
+
+  <!-- ============ STUDIO HOME ============ -->
+  <section id="studio-home" class="studio-view active">
+    <div class="container">
+
+      <div class="studio-hero">
+        <p class="eyebrow">Studio</p>
+        <h1>Where execution meets architecture.</h1>
+        <div class="studio-hero-body">
+          <p>Some engagements begin with an immediate need: a homepage that isn't converting, a product description that undersells what's actually being sold, a pitch that keeps losing the room. Other engagements begin further back, before any of that language exists, in the positioning and strategic thinking that everything downstream depends on.</p>
+          <p>This studio is organized around those two depths. Applied Works covers execution — the writing that ships directly into a business. Foundational Works covers the architecture underneath it — the positioning, strategy, and narrative systems that future writing gets built from. Neither depth is more advanced than the other. They intervene at different points in the same process.</p>
+        </div>
+      </div>
+
+      <div class="panel-grid reveal">
+        <div class="panel">
+          <p class="panel-label">Downstream</p>
+          <h2 class="panel-name">Applied Works</h2>
+          <p>For organizations that already know what they're building and need it expressed — or shipped — with precision. This covers website and landing page copy, full website builds and launches, and product and menu descriptions: the work that carries a product directly into the world. Every engagement here produces something your team can publish, launch, or send immediately.</p>
+          <p class="panel-capabilities">Website Copy · Landing Pages · Website Launch · Product Description · Content Strategy · Marketing Copy</p>
+          <a href="#" class="panel-link" data-view-link="applied">Explore Applied Works →</a>
+        </div>
+        <div class="panel">
+          <p class="panel-label">Upstream</p>
+          <h2 class="panel-name">Foundational Works</h2>
+          <p>For situations where better writing wouldn't actually fix anything, because the problem sits further upstream — in positioning, in a category that hasn't been defined yet, or in a story that changes depending on who's telling it. This covers messaging diagnostics, positioning, and the narrative architecture that shapes an organization's thinking before any of it becomes copy.</p>
+          <p class="panel-capabilities">Messaging Audit · Positioning · Brand Narrative · Messaging Architecture · Authorship</p>
+          <a href="#" class="panel-link" data-view-link="foundational">Explore Foundational Works →</a>
+        </div>
+      </div>
+
+      <div class="bespoke-card reveal">
+        <p class="eyebrow">Bespoke Engagement</p>
+        <h2>Some work doesn't belong inside a predefined engagement.</h2>
+        <p>Occasionally a project moves across research, strategy, and writing at once, or involves a longer collaboration that doesn't map cleanly onto Applied or Foundational Works. In those cases, it's more useful to describe the actual problem than to try to select a category. Every bespoke engagement starts with a direct conversation about what's actually being built.</p>
+        <a href="mailto:singaparadom@gmail.com?subject=Bespoke%20Engagement" class="bespoke-button">Start a Conversation</a>
+      </div>
+
+      <div class="studio-closing reveal">
+        <p>The studio is organized around problems rather than predefined packages. Choose the practice that matches where your challenge actually begins.</p>
+        <div class="studio-closing-links">
+          <a href="#" data-view-link="applied">Applied Works</a>
+          <a href="#" data-view-link="foundational">Foundational Works</a>
+          <a href="mailto:singaparadom@gmail.com">Contact</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ APPLIED WORKS ============ -->
+  <section id="applied" class="studio-view view-applied">
+    <div class="container">
+
+      <div class="view-header">
+        <p class="eyebrow">Applied Works · Downstream</p>
+        <h1>Execution for products already in motion.</h1>
+        <div class="view-intro">
+          <p>Applied Works assumes the thinking already exists. The strategy is set, the product is real, and what's missing is either language sharp enough to carry it into a browser tab, a menu, or a product page — or a working site to put that language on in the first place. These engagements move quickly because they don't start from zero — they start from what's already true about the business and either say it well or ship it.</p>
+        </div>
+      </div>
+
+      <div class="service-block reveal" data-service-meta="Service 01 · Copywriting · Execution">
+        <div class="service-index">01</div>
+        <h2 class="service-name">Website &amp; Landing Page Copy</h2>
+        <p>A homepage rarely underperforms because of bad sentences alone. More often, the page has accumulated decisions over time — a feature added here, a headline changed there — until the structure of the story stops holding together, even when each individual line reads fine on its own. This engagement rebuilds that structure from a single narrative logic, so every section earns the attention of the one that follows it instead of repeating what came before.</p>
+        <ul class="service-deliverables">
+          <li><strong>Full page rewrite</strong> — homepage or landing page, hero to CTA.</li>
+          <li><strong>Headline system</strong> — three to five directions, each built around a different angle a buyer might already believe.</li>
+          <li><strong>One revision round</strong> — built in, based on your specific pushback after the first draft lands.</li>
+        </ul>
+        <div class="service-footer">
+          <span class="service-price">$1,500–4,000 · 1–2 weeks</span>
+          <a href="/work-with-me/website-copy" class="service-cta">Start →</a>
+        </div>
+      </div>
+
+      <div class="service-block reveal" data-service-meta="Service 02 · Copywriting · Execution">
+        <div class="service-index">02</div>
+        <h2 class="service-name">Product &amp; Menu Description Writing</h2>
+        <p>A product without the right words sits in a catalog waiting to be scrolled past. This is the same work behind Alraya — turning a plate of grilled fish into something someone wants before they've tasted it. The method stays sensory and specific: a real detail about sourcing, preparation, or material, rather than an adjective borrowed from every other listing nearby.</p>
+        <ul class="service-deliverables">
+          <li><strong>Up to 10 descriptions</strong> — each grounded in a real detail rather than a generic superlative.</li>
+          <li><strong>One overarching line</strong> — a single thread tying the full catalog together.</li>
+          <li><strong>Tone note</strong> — a short reference so future additions can match without hiring again.</li>
+        </ul>
+        <div class="service-footer">
+          <span class="service-price">$450–1,200 · 3–5 days</span>
+          <a href="/work-with-me/product-description" class="service-cta">Start →</a>
+        </div>
+      </div>
+
+      <div class="service-block reveal" data-service-meta="Service 03 · Build &amp; Deploy · Execution">
+        <div class="service-index">03</div>
+        <h2 class="service-name">Website Launch</h2>
+        <p>Some businesses don't have a website with weak copy — they have no website at all, or one that's effectively invisible to the people searching for them. This engagement closes that gap directly: a working site, built and shipped on your own domain, structured so that both visitors and search engines can find and understand it. It's the fastest route from having no credible presence online to having one that holds up the moment someone looks you up.</p>
+        <ul class="service-deliverables">
+          <li><strong>Built &amp; deployed site</strong> — up to five pages, responsive, live on your own domain.</li>
+          <li><strong>Search setup</strong> — Google Search Console verification, sitemap submission, core metadata and technical SEO on every page.</li>
+          <li><strong>14 days of post-launch fixes</strong> — covering anything that breaks or needs adjusting after going live.</li>
+        </ul>
+        <div class="service-footer">
+          <span class="service-price">$600–1,800 · 5–7 days</span>
+          <a href="/work-with-me/website-launch" class="service-cta">Start →</a>
+        </div>
+      </div>
+
+      <div class="engagement-note reveal">
+        <p>Every Applied Works engagement begins with a short conversation about what already exists — the product, the audience, and whatever language is currently in place. Scope and price are confirmed before anything is billed.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ FOUNDATIONAL WORKS ============ -->
+  <section id="foundational" class="studio-view view-foundational">
+    <div class="container">
+
+      <div class="view-header">
+        <p class="eyebrow">Foundational Works · Upstream</p>
+        <h1>The architecture that shapes everything downstream.</h1>
+        <div class="view-intro">
+          <p>Some communication problems can't be solved by rewriting a page, because the page was never really the problem. The confusion sits further back — in a positioning that never got decided, or a story that changes depending on who inside the company is telling it. Foundational Works addresses that layer directly, before any copy gets written, so that everything produced afterward comes from the same coherent source.</p>
+        </div>
+      </div>
+
+      <div class="service-block reveal" data-service-meta="Service 01 · Audit · Architecture">
+        <div class="service-index">01</div>
+        <h2 class="service-name">Messaging Audit</h2>
+        <p>Somewhere between what's actually been built and how people perceive it, a signal gets lost. This engagement finds exactly where that thread snaps — reading a homepage, a pitch deck, or a product page the way a buyer encounters it cold, with no context and a finger already hovering over the back button, to map every point where real authority gets buried under predictable phrasing.</p>
+        <ul class="service-deliverables">
+          <li><strong>Friction map</strong> — line-by-line audit of your homepage, pitch, or product pages.</li>
+          <li><strong>Five-second read test</strong> — what a stranger actually understands, cold.</li>
+          <li><strong>Priority fix list</strong> — ranked by how much clarity each line recovers.</li>
+        </ul>
+        <div class="service-footer">
+          <span class="service-price">$350–650 · 3–5 days</span>
+          <a href="/work-with-me/messaging-audit" class="service-cta">Start →</a>
+        </div>
+      </div>
+
+      <div class="service-block reveal" data-service-meta="Service 02 · Strategy · Architecture">
+        <div class="service-index">02</div>
+        <h2 class="service-name">Product Positioning</h2>
+        <p>When a team gives a different answer every time someone asks what they do, the issue usually isn't a lack of words — it's that the actual position has never been pinned down. This engagement sits inside that gap and finds the one sentence the product has been circling without landing on, then builds the language that lets the whole team say it identically, without softening it.</p>
+        <ul class="service-deliverables">
+          <li><strong>Positioning statement</strong> — one sentence, stress-tested against real objections.</li>
+          <li><strong>Buyer language map</strong> — the words your buyers already use, redirected back at them.</li>
+          <li><strong>Competitive contrast</strong> — what you're not, so what you are stops needing explaining.</li>
+        </ul>
+        <div class="service-footer">
+          <span class="service-price">$2,500–6,000 · 2–3 weeks</span>
+          <a href="/work-with-me/positioning" class="service-cta">Start →</a>
+        </div>
+      </div>
+
+      <div class="service-block reveal" data-service-meta="Service 03 · Strategy · Architecture">
+        <div class="service-index">03</div>
+        <h2 class="service-name">Brand Narrative &amp; Messaging Systems</h2>
+        <p>Past a certain point, one good headline stops being enough, because every touchpoint needs to say the same thing without being rewritten from scratch each time. This engagement builds the underlying narrative architecture — the story, the voice, and the rules governing both — so future copy gets produced from one coherent source instead of reinvented per channel.</p>
+        <ul class="service-deliverables">
+          <li><strong>Narrative &amp; voice document</strong> — with real examples of what fits and what doesn't.</li>
+          <li><strong>Applied copy set</strong> — across your priority touchpoints, site to deck to campaign.</li>
+          <li><strong>Direct consultation</strong> — available throughout delivery.</li>
+        </ul>
+        <div class="service-footer">
+          <span class="service-price">$5,000–15,000 · 4–6 weeks</span>
+          <a href="/work-with-me/brand-narrative" class="service-cta">Start →</a>
+        </div>
+      </div>
+
+      <div class="engagement-note reveal">
+        <p>Foundational engagements begin with a longer initial conversation, since the goal is to correctly diagnose where the problem actually lives before any scope gets fixed. Some conversations that start here end up needing only an Applied Works engagement — that's a fine outcome too.</p>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <span>© 2026 Mahdi Singaparado</span>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/#work">Work</a>
+      <a href="/#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/shared/shared.js"></script>
+<script>
+// STUDIO — INLINED. Same reason as the CSS: no external file, no path bug possible.
+(function () {
+  var VIEWS = ['studio-home', 'applied', 'foundational'];
+  var TITLES = {
+    'studio-home': 'Studio — Mahdi Singaparado',
+    'applied': 'Applied Works — Studio — Mahdi Singaparado',
+    'foundational': 'Foundational Works — Studio — Mahdi Singaparado'
+  };
+
+  function showView(id, push) {
+    if (VIEWS.indexOf(id) === -1) id = 'studio-home';
+
+    VIEWS.forEach(function (v) {
+      var el = document.getElementById(v);
+      if (el) el.classList.toggle('active', v === id);
+    });
+
+    document.querySelectorAll('[data-view-link]').forEach(function (a) {
+      a.classList.toggle('is-current', a.getAttribute('data-view-link') === id);
+    });
+
+    document.title = TITLES[id];
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    if (push) {
+      var hash = id === 'studio-home' ? '' : ('#' + id);
+      history.pushState({ view: id }, '', '/studio' + hash);
+    }
+
+    if (typeof initReveal === 'function') {
+      var el2 = document.getElementById(id);
+      if (el2) initReveal(el2);
+    }
+  }
+
+  document.querySelectorAll('[data-view-link]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      showView(a.getAttribute('data-view-link'), true);
+    });
+  });
+
+  window.addEventListener('popstate', function (e) {
+    var id = (e.state && e.state.view) || (location.hash ? location.hash.slice(1) : 'studio-home');
+    showView(id, false);
+  });
+
+  var initial = location.hash ? location.hash.slice(1) : 'studio-home';
+  showView(initial, false);
+})();
+</script>
+</body>
+</html>
